@@ -1,4 +1,6 @@
 class Calculator:
+    def __init__(self):
+        print("WELCOME TO THE CALCULATOR PROGRAM")
     def UserValues(self):
         number_1=float(input("ENTER TWO NUMBERS:"))
         number_2=float(input("ENTER TWO NUMBERS:"))
@@ -23,6 +25,8 @@ while(loop!="N"):
 
             result=C.ChoiceEvaluation()
             print("RESULT OF THE OPERATION IS",result)
-            loop=input("DO YOU WISH TO CONTINUE (Y/N)").upper()
     except Exception as e:
         print("AN ERROR OCCUR PLS TRY AGAIN.....")
+    finally:
+        loop=input("DO YOU WISH TO CONTINUE (Y/N)").upper()
+print("THANKYOU VISIT AGAIN")
