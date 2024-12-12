@@ -58,19 +58,22 @@ class ContactBook:
 
     
                         
-loop="Y"
-while(loop!="N"):
-    CB=ContactBook()
-    count=int(input("Enter number of contact to be add"))
+loop = "Y"
+CB = ContactBook()  # Create one instance of ContactBook to persist contacts
+while loop != "N":
+    count = int(input("Enter number of contacts to be added: "))
     CB.AddContact(count)
-    ch=input("DO YOU WISH TO VIEW ALL CONTACTS(Y/N)").upper()
-    CB.ViewContacts()if ch=="Y" else ch="N"
-    ch=input("DO YOU WISH TO SEARCH CONTACTS(Y/N)").upper()
-    if(ch=="Y"):
-        key=CB.SearchContact()
-        CB.ViewContacts(key)
-    ch=input("DO YOU WISH TO UPDATE CONTACTS(Y/N)").upper()
-    CB.UpdateContact() if ch=="Y" else ch="N"
-    ch=input("DO YOU WISH TO DELETE CONTACTS(Y/N)").upper()
-    CB.DeleteContacts() if ch=="Y" else ch="N"
-    loop=input("DO YOU WISH TO CONTINUE(Y/N)")
+    ch = input("DO YOU WISH TO VIEW ALL CONTACTS (Y/N): ").upper()
+    if ch == "Y":
+        CB.ViewContacts()
+    ch = input("DO YOU WISH TO SEARCH CONTACTS (Y/N): ").upper()
+    if ch == "Y":
+        key = CB.SearchContact()  # Assuming this returns a valid key
+        CB.ViewContacts(key)  # View the contact by the key
+    ch = input("DO YOU WISH TO UPDATE CONTACTS (Y/N): ").upper()
+    if ch == "Y":
+        CB.UpdateContact()
+    ch = input("DO YOU WISH TO DELETE CONTACTS (Y/N): ").upper()
+    if ch == "Y":
+        CB.DeleteContact()
+    loop = input("DO YOU WISH TO CONTINUE (Y/N): ").upper()
