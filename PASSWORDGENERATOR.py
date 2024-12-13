@@ -9,12 +9,23 @@ def Passcode_generator(choice,length):
     passcode=''.join(random.choices(combination,k=length))
     return(passcode)
 def UserInput():
+    print("==============================================================")
     length=int(input("Enter length of your passcode:"))
-    choice=int(input("1.NUMBERS ONLY \n 2.LETTERS ONLY \n 3.LETTERS and NUMBERS \nENTER YOUR COMPLEXITY:"))
+    print("==============================================================")
+    choice=int(input(" 1.NUMBERS ONLY \n 2.LETTERS ONLY \n 3.LETTERS and NUMBERS \nENTER YOUR COMPLEXITY:"))
+    print("==============================================================")
     return(Passcode_generator(choice,length))
 print("WELCOME TO PASSWORD GENERATOR")
-loop="Y"
-while(loop!="N"):
-    passcode=UserInput()
-    print("THE GENERATED PASSWORD IS:",passcode)
+while True:
+    try:
+        passcode=UserInput()
+        print("==============================================================")
+        print("THE GENERATED PASSWORD IS:",passcode)
+        print("==============================================================")
+    except Exception as e:
+        print(e)
+        print("TRY AGAIN")
+        continue
     loop=input("DO YOU WISH TO GENERATE ANOTHER PASSCODE (Y/N)").upper()
+    if(loop=="N"):
+        break
