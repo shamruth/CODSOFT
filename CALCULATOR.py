@@ -18,15 +18,17 @@ class Calculator:
             return(number_1/number_2)
         elif(choice=="%"):
             return(number_1%number_2)
-loop="Y"
 C=Calculator()
-while(loop!="N"):
+while True:
     try:
 
             result=C.ChoiceEvaluation()
             print("RESULT OF THE OPERATION IS",result)
     except Exception as e:
+        print(e)
         print("AN ERROR OCCUR PLS TRY AGAIN.....")
-    finally:
-        loop=input("DO YOU WISH TO CONTINUE (Y/N)").upper()
+        continue
+    loop=input("DO YOU WISH TO CONTINUE (Y/N)").upper()
+    if(loop=="N"):
+        break
 print("THANKYOU VISIT AGAIN")
