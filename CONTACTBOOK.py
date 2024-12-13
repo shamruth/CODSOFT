@@ -67,11 +67,8 @@ class ContactBook:
         print("DISPLAYING ALL CONTACTS AFTER DELETING")
         self.ViewContacts()
 
-    
-                        
-loop = "Y"
 CB = ContactBook()  # Create one instance of ContactBook to persist contacts
-while loop != "N":
+while True:
     count = int(input("Enter number of contacts to be added: "))
     CB.AddContact(count)
     ch = input("DO YOU WISH TO VIEW ALL CONTACTS (Y/N): ").upper()
@@ -88,3 +85,5 @@ while loop != "N":
     if ch == "Y":
         CB.DeleteContact()
     loop = input("DO YOU WISH TO CONTINUE (Y/N): ").upper()
+    if(loop=="N"):
+        break
